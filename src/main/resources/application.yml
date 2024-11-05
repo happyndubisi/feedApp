@@ -36,7 +36,7 @@ spring:
       hibernate:
         '[format_sql]': true        
     hibernate:
-      naming.physical-strategy: org.hibernate.boot.model.naming.P
+      naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
 ---
 
