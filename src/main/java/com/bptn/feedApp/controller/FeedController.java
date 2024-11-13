@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bptn.feedApp.domain.PageResponse;
 import com.bptn.feedApp.jpa.Feed;
+import com.bptn.feedApp.jpa.FeedMetaData;
 import com.bptn.feedApp.service.FeedService;
 
 @CrossOrigin
@@ -55,4 +56,13 @@ public class FeedController {
 
 		return this.feedService.getOtherUsersFeeds(pageNum, pageSize);
 	}
+
+	@PostMapping("/meta/{feedId}")
+	public FeedMetaData createFeedMetaData(@PathVariable int feedId, @RequestBody FeedMetaData meta) {
+
+		logger.debug("Creating FeedMetaData, feedId: {}", feedId);
+
+		return this.feedService.createFeedMetaData(feedId, meta);
+	}
+
 }
